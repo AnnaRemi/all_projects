@@ -16,23 +16,17 @@ class WaterElementFactory(ElementFactory):
 
 
 class WaterMagicGirl(MagicGirl):
-    spell = 'flooood!'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'flooood!'
 
 
 class WaterMagicBoy(MagicBoy):
-    weapon = 'sharp knife'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'sharp knife'
 
 
 class WaterMagicAnimal(MagicAnimal):
-
-    def treat(self):
-        WaterMagicBoy.health += 5
-        WaterMagicGirl.health += 5
-        WaterMagicAnimal.health += 5
-        return 'Treatment Water Army!'
-
-    def shield(self):
-        WaterMagicBoy.protection += 1
-        WaterMagicGirl.protection += 1
-        WaterMagicAnimal.protection += 1
-        return 'Protect Water Army!'
+    def __init__(self):
+        super().__init__()

@@ -2,20 +2,16 @@ from units.magic_unit import MagicUnit
 
 
 class MagicBoy(MagicUnit):
-    damage = 15
-    speed = 15
-    weapon = 'none'
-    spell = None
-    protection = 20
-    price = 30
-
-    def attack(self):
-        print('Attack on {}'.format(self.weapon))
-        self.energy -= 3
-        return [self.damage, self.spell]
+    def __init__(self):
+        super().__init__()
+        self._damage = 15
+        self._speed = 15
+        self._weapon = None
+        self._protection = 20
+        self._price = 30
 
     def treat(self):
-        pass
+        return False
 
     def shield(self):
-        pass
+        return False

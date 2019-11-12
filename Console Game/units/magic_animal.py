@@ -3,17 +3,19 @@ from units.magic_unit import MagicUnit
 
 
 class MagicAnimal(MagicUnit):
-    speed = 10
-    protection = 30
-    price = 15
+    def __init__(self):
+        super().__init__()
+        self._speed = 10
+        self._protection = 30
+        self._price = 15
+        self._weapon = 'claws'
+        self._damage = 0
 
-    @abstractmethod
     def treat(self):
-        pass
+        return True
 
     def attack(self):
-        pass
+        return 0
 
-    @abstractmethod
     def shield(self):
-        pass
+        return True

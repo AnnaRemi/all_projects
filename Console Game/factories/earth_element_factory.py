@@ -16,23 +16,17 @@ class EarthElementFactory(ElementFactory):
 
 
 class EarthMagicGirl(MagicGirl):
-    spell = 'ssswamp!'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'ssswamp!'
 
 
 class EarthMagicBoy(MagicBoy):
-    weapon = 'wooden nunchuck'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'wooden nunchuck'
 
 
 class EarthMagicAnimal(MagicAnimal):
-
-    def treat(self):
-        EarthMagicBoy.health += 5
-        EarthMagicGirl.health += 5
-        EarthMagicAnimal.health += 5
-        return 'Treatment Earth Army!'
-
-    def shield(self):
-        EarthMagicBoy.protection += 1
-        EarthMagicGirl.protection += 1
-        EarthMagicAnimal.protection += 1
-        return 'Protect Earth Army!'
+    def __init__(self):
+        super().__init__()

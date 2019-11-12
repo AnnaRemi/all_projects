@@ -2,14 +2,17 @@ from abc import ABC, abstractmethod
 
 
 class ElementFactory(ABC):
-    money = 100
+    _money = 100
+    price = {'girl': 30, 'boy': 30, 'animal': 15}
 
-    def can_create_magic_unit(self, price, creating_unit):
-        if self.money >= price:
-            self.money -= price
-            return creating_unit()
-        return "You don't have enough coins, please write" \
-               " Q to change element or choose another element"
+    def can_create_magic_unit(self, unit):
+        try:
+            if self._money >= self.price[unit]:
+                self._money -= self.price[unit]
+                return True
+            return False
+        except KeyError:
+            return None
 
     @abstractmethod
     def create_magic_girl(self):
@@ -24,4 +27,4 @@ class ElementFactory(ABC):
         pass
 
     def return_message(self):
-        return 'You have {} coins'.format(self.money)
+        return 'You have {} coins'.format(self._money)

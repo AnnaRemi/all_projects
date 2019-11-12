@@ -16,23 +16,17 @@ class FireElementFactory(ElementFactory):
 
 
 class FireMagicGirl(MagicGirl):
-    spell = 'fffire!'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'fffire!'
 
 
 class FireMagicBoy(MagicBoy):
-    weapon = 'torch'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'torch'
 
 
 class FireMagicAnimal(MagicAnimal):
-
-    def treat(self):
-        FireMagicBoy.health += 5
-        FireMagicGirl.health += 5
-        FireMagicAnimal.health += 5
-        return "Treatment Fire Army!"
-
-    def shield(self):
-        FireMagicBoy.protection += 1
-        FireMagicGirl.protection += 1
-        FireMagicAnimal.protection += 1
-        return 'Protect Air Army!'
+    def __init__(self):
+        super().__init__()

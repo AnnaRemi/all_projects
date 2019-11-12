@@ -16,23 +16,16 @@ class AirElementFactory(ElementFactory):
 
 
 class AirMagicGirl(MagicGirl):
-    spell = 'huuuuricane!'
+    def __init__(self):
+        self._weapon = 'huuuuricane!'
 
 
 class AirMagicBoy(MagicBoy):
-    weapon = 'air sword'
+    def __init__(self):
+        super().__init__()
+        self._weapon = 'air sword'
 
 
 class AirMagicAnimal(MagicAnimal):
-
-    def treat(self):
-        AirMagicBoy.health += 5
-        AirMagicGirl.health += 5
-        AirMagicAnimal.health += 5
-        return 'Treatment Air Army!'
-
-    def shield(self):
-        AirMagicBoy.protection += 1
-        AirMagicGirl.protection += 1
-        AirMagicAnimal.protection += 1
-        return 'Protect Air Army!'
+    def __init__(self):
+        super().__init__()

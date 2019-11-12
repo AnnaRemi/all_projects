@@ -2,22 +2,16 @@ from abc import ABC, abstractmethod
 
 
 class MagicUnit(ABC):
-    health = 100
-    damage = None
-    speed = None
-    protection = None
-    price = None
-    energy = 100
+    def __init__(self):
+        self._health = 100
+        self._damage = None
+        self._speed = None
+        self._protection = None
+        self._price = None
+        self.name = None
 
-    def info_health(self):
-        return self.health
-
-    def info_protection(self):
-        return self.protection
-
-    @abstractmethod
-    def attack(self):
-        pass
+    def get_name(self):
+        return self._name
 
     @abstractmethod
     def treat(self):
